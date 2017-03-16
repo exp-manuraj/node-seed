@@ -2,23 +2,25 @@
 
 Node Seed is a base framework buid with Express js and includes the following packages
 
-  - Mongoose
-  - Q
-  - Cors
-  - Json Web Token
-  - Node Mailer
-  - Underscore
+  - [Mongoose](http://mongoosejs.com/)
+  - [Q](https://github.com/kriskowal/q)
+  - [Cors](https://www.npmjs.com/package/cors)
+  - [JWT](https://www.npmjs.com/package/jsonwebtoken)
+  - [Node Mailer](https://www.npmjs.com/package/nodemailer)
+  - [UnderScore](https://www.npmjs.com/package/underscore)
+  - [APIDOC](http://apidocjs.com/)
 
 # Features!
   - Modularization
   - Dynamic Routing
+  - API Documentation
 
 ### Tech
 
 Node-Seed uses a number of open source projects to work properly:
 
-* [Node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
+* [Node.js](https://nodejs.org/) - evented I/O for the backend
+* [Express](https://expressjs.com/) - fast node.js network app framework
 
 ### Installation
 
@@ -30,6 +32,12 @@ Install the dependencies and devDependencies and start the server.
 $ cd node-seed
 $ npm install
 $ npm start
+```
+
+### Create API Documentation
+
+```sh
+$ Will coming soon..
 ```
 
 ### Development
