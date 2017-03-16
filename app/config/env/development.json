@@ -1,0 +1,21 @@
+{
+	"project_name" : "Anthive",
+	"version" : "v1",
+	"base_url" : "https://localhost/",
+	"api_url" : "https://localhost/api/",
+	"client_url" : "https://localhost/",
+	"secret_key":"s@cretK@y",
+	"db":{
+		"hosts":"localhost",
+		"user":"",
+		"pass":"",
+		"name":"database",
+		"options":""
+	},
+	"smtp": {
+	    "service": "Gmail",
+	    "email": "",
+	    "password": "",
+	    "email_label": "Project Name"
+	}
+}
