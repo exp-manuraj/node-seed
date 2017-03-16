@@ -36,9 +36,7 @@ $ npm start
 
 ### Create API Documentation
 
-```sh
-$ Will coming soon..
-```
+Will be coming soon..
 
 ### Development
 
