@@ -1,14 +1,16 @@
 
-module.exports = function(app){
+var glob = require("glob");
 
-    var modules = [
-        'common',           // Common Modules
-        'account'              // User Modules
-    ];
-    
-    modules.forEach(function(module){
-        var moduleRoutes = __dirname+'/app/modules/' + module + '/' + module + '.router.js';
-        require(moduleRoutes)(app);
+module.exports = function(app){
+    // options is optional
+    var options = {};
+    glob("**/router.*.js", options , function (er, files) {
+        // files is an array of filenames.
+        // If the `nonull` option is set, and nothing
+        // was found, then files is ["**/*.js"]
+        // er is an error object or null.
+        files.forEach(function(file){
+            require(__base + file)(app);
+        });
     });
-    
 }

@@ -10,8 +10,8 @@
 
 var Q = require('q');
 
-var failure = require('../../../helpers/helper.response').failure;
-var success = require('../../../helpers/helper.response').success;
+var failure = require( __base + 'app/helpers/helper.response').failure;
+var success = require( __base + 'app/helpers/helper.response').success;
 
 var locals = {};
 

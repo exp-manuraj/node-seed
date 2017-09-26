@@ -11,15 +11,17 @@ var cors = require('cors');
 var compression = require('compression');
 var mongoose = require('mongoose');
 var fs = require('fs');
+var helmet = require('helmet');
 
 var failure = require('./app/helpers/helper.response').failure;
 var config = require('./app/config');
 
 var app = express();
 
-// CORS
+// Cors
 app.use(cors());
-
+// Helmet
+app.use(helmet());
 // Compression
 app.use(compression());
 
@@ -27,14 +29,20 @@ app.use(compression());
 config = new config();
 app.set('config', config);
 
+// Set global scopes
+global.__config = config;
+global.__base = __dirname + '/';
+global.BaseService = require('./app/helpers/helper.base');
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // Database connection
-var authentication = (config.db.user && config.db.pass) ? config.db.user + ':' + config.db.pass + '@' : "";
+/* var authentication = (config.db.user && config.db.pass) ? config.db.user + ':' + config.db.pass + '@' : "";
 var connectionString = 'mongodb://' + authentication + config.db.hosts + '/' + config.db.name + config.db.options;
-mongoose.connect(connectionString);
+mongoose.connect(connectionString); */
 
 
 // uncomment after placing your favicon in /public

@@ -8,9 +8,8 @@
 */
 
 var jwt = require('jsonwebtoken');
-var failure = require('./../helpers/response_helper').failure;
-var HTTP = require('./../helpers/http');
-var User = require('./../schema/User');
+var failure = require('./../helpers/helper.response').failure;
+var HTTP = require('./../helpers/helper.http');
 
 module.exports.auth = function(req, res, next) {
 
@@ -37,22 +36,7 @@ module.exports.auth = function(req, res, next) {
             return res.json(failure('Invalid Authentication Token', HTTP.FORBIDDEN));
         } else {
 
-            User.findById(decoded._id).exec().then(function(user) {
-
-                if (!user)
-                    return res.json(failure('We cannot authenticate a user with the token!', HTTP.FORBIDDEN));
-
-                req.user = {
-                    _id: user._id,
-                    name: user.name,
-                    email: user.p.email,
-                    user_type: user.user_type,
-                    is_admin: decoded.is_admin
-                };
-
-                next();
-
-            });
+           next();
 
         }
     });

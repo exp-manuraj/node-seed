@@ -10,11 +10,11 @@
 
 var Q = require('q');
 
-var failure = require('../../../helpers/helper.response').failure;
-var success = require('../../../helpers/helper.response').success;
-var GenHelper = require('../../../helpers/helper.general');
-var Http = require('../../../helpers/helper.http');
-var Const = require('../../../helpers/helper.constant');
+var failure = require( __base + 'app/helpers/helper.response').failure;
+var success = require( __base + 'app/helpers/helper.response').success;
+var GenHelper = require( __base + 'app/helpers/helper.general');
+var Http = require( __base + 'app/helpers/helper.http');
+var Const = require( __base +  'app/helpers/helper.constant');
 
 var locals = {};
 
@@ -74,10 +74,8 @@ function validate() {
  */
 
 function get() {
-
-	locals.config = locals.app.get('config');
-
-	return Q(User.findOne({email:locals.body.email}).exec());
+	// return Q(User.findOne({email:locals.body.email}).exec());
+	return;
 }
 
 /**
@@ -107,7 +105,7 @@ function doResponseFormat(user) {
 	var token = jwt.sign({
 		_id: user._id,
 		time: new Date().getTime()
-	}, locals.config.secret_key);
+	}, locals.__config.secret_key);
 
 	var op = {
 		_id : user._id,

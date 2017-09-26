@@ -5,7 +5,7 @@
    *
    * @apiParamExample {json} Request-Format:
    *     {
-   *       "email": "karthika.g@experionglobal.com",
+   *       "email": "user@email.com",
    *       "password": "123456"
    *     }
    *
@@ -17,9 +17,9 @@
    *        "code": 200,
    *        "data": {
    *          "_id": "58563bd869af5c6846c6b6b0",
-   *          "fname": "Karthika",
+   *          "fname": "User",
    *          "lname": "G",
-   *          "email": "karthika.g@experionglobal.com"
+   *          "email": "user@email.com",
    *        }
    *      }
    *
