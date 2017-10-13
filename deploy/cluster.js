@@ -1,4 +1,4 @@
-// * Sage Initial render page - use cluster
+// Initial render page - use cluster
 
 var cluster = require('cluster');
 var numCPUs = require('os').cpus().length;

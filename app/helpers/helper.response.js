@@ -8,6 +8,8 @@
 
 'use strict';
 
+const HttpStatus = require('http-status-codes');
+
 /**
  * Success response helper
  * @author Manuraj M
@@ -15,12 +17,16 @@
  * @createdOn 14-Mar-2017
  */
 
-var success = function(message,results){
-    return ({
-            status: 1,
-            message: message,
-            data: results
-    });
+var success = (message,results,code) => {
+
+    var pattern = {
+        status: true,
+        code : (code) ? code : HttpStatus.OK,
+        message: message,
+        data: results
+    };
+    
+    return pattern;
 };
 
 /**
@@ -30,12 +36,17 @@ var success = function(message,results){
  * @createdOn 14-Mar-2017
  */
 
-var failure = function(message) {
-    return ({
-            status: 0,
-            message: message.toString(),
-            data: null
-    });
+var failure = (e,code) => {
+    
+    var pattern = {
+        status: false,
+        code : (code) ? code : HttpStatus.BAD_REQUEST,
+        message : e.message,
+        data : null
+    };
+    
+    return pattern;
+
 };
 
 module.exports = {

@@ -4,7 +4,7 @@
 var initCtrl = require('./init/ctrl.init');
 var loginCtrl = require('./login/ctrl.login');
 
-module.exports = function(app){
+module.exports = (app) => {
     
     app.get( '/', initCtrl.init );
     app.post( '/login', loginCtrl.login );

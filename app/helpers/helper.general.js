@@ -15,7 +15,7 @@
  * @createdOn 14-Mar-2017
  */
 
-var today = function(){
+var today = () => {
     return new Date();
 };
 
@@ -26,7 +26,7 @@ var today = function(){
  * @createdOn 14-Mar-2017
  */
 
-var todayMilliseconds = function(){
+var todayMilliseconds = () => {
     return new Date().getTime();
 };
 
@@ -37,7 +37,7 @@ var todayMilliseconds = function(){
  * @createdOn 14-Mar-2017
  */
 
-var isvalidEmail = function(email){
+var isvalidEmail = (email) => {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
 };

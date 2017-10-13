@@ -14,9 +14,9 @@
  * @createdOn 4-Apr-2017
  */
 
-var demo = function(){
+var demo = () => {
     
-};
+}
 
 module.exports = {
     demo : demo
