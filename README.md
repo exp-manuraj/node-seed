@@ -2,8 +2,7 @@
 
 Node Seed is a base framework buid with Express js and includes the following packages
 
-  - [Mongoose](http://mongoosejs.com/)
-  - [Q](https://github.com/kriskowal/q)
+  - [Helmet](https://www.npmjs.com/package/helmet)
   - [Cors](https://www.npmjs.com/package/cors)
   - [JWT](https://www.npmjs.com/package/jsonwebtoken)
   - [Node Mailer](https://www.npmjs.com/package/nodemailer)
@@ -11,6 +10,7 @@ Node Seed is a base framework buid with Express js and includes the following pa
   - [APIDOC](http://apidocjs.com/)
 
 # Features!
+  - Ecmascript 6 support
   - Modularization
   - Dynamic Routing
   - API Documentation
