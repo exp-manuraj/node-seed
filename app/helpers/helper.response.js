@@ -19,13 +19,7 @@ const HttpStatus = require('http-status-codes');
 
 var success = (message,results,code) => {
 
-    var pattern = {
-        status: true,
-        code : (code) ? code : HttpStatus.OK,
-        message: message,
-        data: results
-    };
-    
+    var pattern = results;
     return pattern;
 };
 
@@ -36,17 +30,18 @@ var success = (message,results,code) => {
  * @createdOn 14-Mar-2017
  */
 
-var failure = (e,code) => {
+var failure = (e,type,code,param) => {
     
     var pattern = {
-        status: false,
-        code : (code) ? code : HttpStatus.BAD_REQUEST,
-        message : e.message,
-        data : null
+        error:{
+            message : e.message,
+            type: type,
+            code : (code) ? code : HttpStatus.BAD_REQUEST,
+            param: param
+        }
     };
     
     return pattern;
-
 };
 
 module.exports = {

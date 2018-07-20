@@ -22,10 +22,8 @@ const failure = require( __base + 'app/helpers/helper.response').failure;
 
 const init = async (req, res, next) => {
 	
-	let config = req.app.get('config');
-	
 	try {
-		const response = await doFormat(config);
+		const response = await doFormat();
 		return res.status(HttpStatus.OK).send( response );
 	} catch (e) {
 		return res.status(HttpStatus.BAD_REQUEST).send( failure(e) );
@@ -40,8 +38,10 @@ const init = async (req, res, next) => {
  * @modifiedOn 12-Oct-2017
  */
 
-const doFormat = (config) => {
+const doFormat = () => {
 	
+	let config = process.env.config;
+
 	var op = {
 		api : config.project_name,
         version: config.version,

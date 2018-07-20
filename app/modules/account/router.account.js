@@ -1,11 +1,13 @@
 
-// Common routes for user module api's
+// Common routes for this module
 
-var initCtrl = require('./init/ctrl.init');
-var loginCtrl = require('./login/ctrl.login');
+const express = require('express');
+const router = express.Router();
 
-module.exports = (app) => {
-    
-    app.get( '/', initCtrl.init );
-    app.post( '/login', loginCtrl.login );
-}
+const initCtrl = require('./init/ctrl.init');
+const loginCtrl = require('./login/ctrl.login');
+
+router.get( '/', initCtrl.init);
+router.post( '/login', loginCtrl.login );
+
+module.exports = router;

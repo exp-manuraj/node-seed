@@ -10,7 +10,7 @@ module.exports = function(app){
         // was found, then files is ["**/*.js"]
         // er is an error object or null.
         files.forEach(function(file){
-            require(__base + file)(app);
+            app.use('/', require(__base + file));
         });
     });
 }

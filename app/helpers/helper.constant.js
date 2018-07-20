@@ -14,6 +14,7 @@ module.exports = {
     ZERO: 0,
     ONE: 1,
     TWO: 2,
-    PAGE_LIMIT : 5
-    
+    PAGE_LIMIT : 5,
+    TRUE: true,
+    FALSE: false
 }
