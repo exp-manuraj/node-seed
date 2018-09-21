@@ -33,7 +33,7 @@ var success = (message,results,code) => {
 var failure = (e,type,code,param) => {
     
     var pattern = {
-        error:{
+        error:{ 
             message : e.message,
             type: type,
             code : (code) ? code : HttpStatus.BAD_REQUEST,

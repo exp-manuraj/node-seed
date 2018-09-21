@@ -40,11 +40,11 @@ const init = async (req, res, next) => {
 
 const doFormat = () => {
 	
-	let config = process.env.config;
+	let config = process.env;
 
 	var op = {
-		api : config.project_name,
-        version: config.version,
+		api : config.PROJECT_NAME,
+        version: config.VERSION,
         date: new Date().getTime()
 	};
 
