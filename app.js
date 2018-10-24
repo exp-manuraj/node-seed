@@ -1,5 +1,5 @@
 
-/** Everything to GOD **/
+/*** Everything to GOD ***/
 
 const express = require('express');
 
