@@ -13,5 +13,6 @@ require('./app/startup/cors')(app);
 require('./app/startup/database');
 require('./router')(app);
 require('./app/startup/errorHandler')(app);
+require('./app/startup/response')(app);
 
 module.exports = app;

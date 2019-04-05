@@ -10,8 +10,6 @@
 
 const HttpStatus = require('http-status-codes');
 
-const failure = require( __base + 'app/helpers/helper.response').failure;
-
 /**
  * Init API
  * @author Manuraj M
@@ -24,9 +22,9 @@ const init = async (req, res, next) => {
 	
 	try {
 		const response = await doFormat();
-		return res.status(HttpStatus.OK).send( response );
+		return res.status(HttpStatus.OK).success( response );
 	} catch (e) {
-		return res.status(HttpStatus.BAD_REQUEST).send( failure(e) );
+		return res.status(HttpStatus.BAD_REQUEST).failure(e);
 	}
 }
 

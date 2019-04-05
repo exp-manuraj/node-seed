@@ -10,12 +10,8 @@
 
 const HttpStatus = require('http-status-codes');
 
-const failure = require( __base + 'app/helpers/helper.response').failure;
-const success = require( __base + 'app/helpers/helper.response').success;
-const exception = require( __base + 'app/helpers/helper.response').exception;
-
-const GenHelper = require( __base + 'app/helpers/helper.general');
-const Constant = require( __base +  'app/helpers/helper.constant');
+const GenHelper = require( __base + 'app/helpers/generalHelper');
+const Constant = require(__base +  'app/helpers/constantHelper');
 
 /**
  * Do Login
@@ -30,12 +26,12 @@ const login = async (req, res, cb) => {
 
         let isvalid = await validate(req);
         let user    = await get();
-		let isAuth  = await authenticate(user);
-		let op      = await doFormat(user);
-		return res.status(HttpStatus.OK).send( op );
+				let isAuth  = await authenticate(user);
+				let op      = await doFormat(user);
+				return res.status(HttpStatus.OK).message('login-success').success(op);
 		
     } catch (e) {
-        return res.status(HttpStatus.BAD_REQUEST).send( failure(e) );
+        return res.status(HttpStatus.BAD_REQUEST).failure(e);
     }
 }
 
