@@ -42,8 +42,8 @@ const doFormat = () => {
 
 	var op = {
 		api : config.PROJECT_NAME,
-        version: config.VERSION,
-        date: new Date().getTime()
+		version: config.VERSION,
+		date: new Date().getTime()
 	};
 
 	return op;

@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "description": "Node seed framework",
-  "main": "./deploy/cluster",
+  "main": "./deploy/www",
   "repository": "https://github.com/exp-manuraj/node-seed.git",
   "author": "Manuraj M <manuraj.m@experionglobal.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./deploy/cluster",
+    "start": "nodemon ./deploy/www",
     "apidoc": "apidoc -i ./app/ -o public/docs"
   },
   "dependencies": {

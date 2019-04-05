@@ -4,10 +4,10 @@
 const express = require('express');
 const router = express.Router();
 
-const initCtrl = require('./init/ctrl.init');
-const loginCtrl = require('./login/ctrl.login');
+const initService = require('./init/initService');
+const loginService = require('./login/loginService');
 
-router.get( '/', initCtrl.init);
-router.post( '/login', loginCtrl.login );
+router.get( '/', initService.init);
+router.post('/login', loginService.login );
 
 module.exports = router;

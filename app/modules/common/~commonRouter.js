@@ -1,2 +1,8 @@
 
-// Common routes for generic api's
+// Common routes for this module
+
+const express = require('express');
+const router = express.Router();
+
+
+module.exports = router;

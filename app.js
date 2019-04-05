@@ -15,4 +15,6 @@ require('./router')(app);
 require('./app/startup/errorHandler')(app);
 require('./app/startup/response')(app);
 
+console.log(`---Server is running on http://localhost:${process.env.PORT}/${process.env.VERSION}/---`);
+
 module.exports = app;
